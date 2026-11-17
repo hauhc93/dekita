@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dekita! – プライバシーポリシー / Privacy Policy</title>
+<style>
+  [hidden]{display:none!important}
+  body{margin:0;font-family:-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;background:#FFF7EC;color:#2A2622;line-height:1.7}
+  main{max-width:720px;margin:0 auto;padding:32px 20px 64px}
+  h1{font-size:26px;margin:8px 0 4px;color:#C9471F} h2{font-size:18px;margin-top:28px}
+  .lang{display:flex;gap:8px;margin-bottom:16px} .lang button{border:1.5px solid #E6D8C6;background:#fff;border-radius:20px;padding:6px 14px;font-size:14px;cursor:pointer}
+  .lang button[aria-pressed=true]{border-color:#C9471F;background:#FFE2D3;font-weight:700}
+  .card{background:#fff;border:1.5px solid #E6D8C6;border-radius:16px;padding:16px 20px;margin-top:16px}
+  small{color:#6B635B}
+</style>
+</head>
+<body>
+<main>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-l="ja" aria-pressed="true">日本語</button>
+    <button type="button" data-l="en" aria-pressed="false">English</button>
+  </div>
+
+  <section data-lang="ja">
+    <h1>Dekita! プライバシーポリシー</h1>
+    <small>最終更新日：2026年11月17日</small>
+    <div class="card">
+      <p><strong>Dekita! は、お子さまの個人情報を収集しません。</strong>広告、行動の追跡、外部の分析サービスは使っていません。</p>
+    </div>
+    <h2>カメラと動画</h2>
+    <p>なわとび・かけっこ・逆上がりのフォームを確認するためにカメラを使います。体の動きの分析（AI）はすべてiPhoneの中で行われ、動画や写真は保存も送信もされません。結果画面の静止画は、アプリを閉じると消えます。</p>
+    <h2>端末に保存する情報</h2>
+    <p>お子さまの呼び名、年齢、選んだおてほんの子、練習の回数・点数・日付だけを、その端末の中に保存します。私たちのサーバーには送られません。設定画面の「すべての記録を削除」でいつでも消せます。アプリを削除しても消えます。</p>
+    <h2>お支払い</h2>
+    <p>プレミアムの購入はAppleのApp Storeで行われます。お支払い情報を私たちが受け取ることはありません。解約はiPhoneの「設定」＞「Apple ID」＞「サブスクリプション」から行えます。</p>
+    <h2>お子さまの安全</h2>
+    <p>購入画面や外部リンクは、保護者向けの確認（計算問題）を通った後にだけ表示されます。運動は必ず大人が見守る中で行ってください。</p>
+    <h2>お問い合わせ</h2>
+    <p>hauhc93@gmail.com</p>
+  </section>
+
+  <section data-lang="en" hidden>
+    <h1>Dekita! Privacy Policy</h1>
+    <small>Last updated: 17 November 2026</small>
+    <div class="card">
+      <p><strong>Dekita! does not collect personal information from children.</strong> No ads, no tracking, no third-party analytics.</p>
+    </div>
+    <h2>Camera and video</h2>
+    <p>The camera is used to check jump rope, running and back hip circle form. All body-movement analysis (AI) runs on the iPhone itself; videos and photos are never saved or sent. The still image on the result screen disappears when the app is closed.</p>
+    <h2>Data kept on the device</h2>
+    <p>Only the child's nickname, age, chosen demo child, and practice counts, scores and dates are stored, on that device only. Nothing is sent to our servers. Delete everything at any time with "Delete all records" in Settings, or by deleting the app.</p>
+    <h2>Payments</h2>
+    <p>Premium is purchased through Apple's App Store; we never receive payment details. Cancel anytime in iPhone Settings › Apple ID › Subscriptions.</p>
+    <h2>Children's safety</h2>
+    <p>Purchase screens and external links are shown only after a parental check (a sum). Children should always exercise with an adult watching.</p>
+    <h2>Contact</h2>
+    <p>hauhc93@gmail.com</p>
+  </section>
+</main>
+<script>
+  const show = l => {
+    document.querySelectorAll('[data-lang]').forEach(s => s.hidden = s.dataset.lang !== l);
+    document.querySelectorAll('[data-l]').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === l));
+    document.documentElement.lang = l;
+  };
+  document.querySelectorAll('[data-l]').forEach(b => b.addEventListener('click', () => show(b.dataset.l)));
+  if (!navigator.language.startsWith('ja')) show('en');
+</script>
+</body>
+</html>
